@@ -24,9 +24,8 @@ export const AuthProvider = ({ children }) => {
   const register = async (userData) => {
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/users/register`,
-        userData,
-        { withCredentials: true }
+        `${import.meta.env.VITE_API_URL}/api/users`,
+        userData
       );
 
       if (response.data) {
