@@ -2,6 +2,10 @@
 
 A full-stack web application designed to help users track their mental well-being through secure journaling, AI-powered sentiment analysis, and a supportive chatbot companion.
 
+##LIVE
+frontend:https://ai-mental-health-journal-frontend.onrender.com/
+backend:https://ai-mental-health-journal-levb.onrender.com
+
 ## 🌟 Features
 
 *   **Secure Authentication**: User registration and login protected by JWT.
