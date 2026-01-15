@@ -23,7 +23,12 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (userData) => {
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/users`, userData);
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/users`,
+        userData,
+        { withCredentials: true }
+      );
+
         if (response.data) {
             localStorage.setItem('user', JSON.stringify(response.data));
             setUser(response.data);
@@ -36,7 +41,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (userData) => {
     try {
-        const response = await axios.post('http://localhost:5000/api/users/login', userData);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/users/login`, userData);
         if (response.data) {
             localStorage.setItem('user', JSON.stringify(response.data));
             setUser(response.data);
