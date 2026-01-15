@@ -27,7 +27,7 @@ const Chat = () => {
             const config = {
                 headers: { Authorization: `Bearer ${user.token}` },
             };
-            const response = await axios.get('http://localhost:5000/api/chat', config);
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/chat`, config);
             if (response.data && response.data.messages) {
                 setMessages(response.data.messages);
             }
@@ -49,7 +49,7 @@ const Chat = () => {
             const config = {
                 headers: { Authorization: `Bearer ${user.token}` },
             };
-            const response = await axios.post('http://localhost:5000/api/chat', { text: userMessage.text }, config);
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/chat`, { text: userMessage.text }, config);
             
             // The backend returns userMessage, aiMessage, and updatedChat
             // We can just append the AI response or update with the full history

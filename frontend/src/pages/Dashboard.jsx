@@ -17,7 +17,7 @@ const Dashboard = () => {
             Authorization: `Bearer ${user.token}`,
           },
         };
-        const response = await axios.get('http://localhost:5000/api/entries', config);
+          const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/entries`, config);
         setEntries(response.data);
       } catch (error) {
         console.error("Error fetching entries:", error);
